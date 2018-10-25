@@ -16,6 +16,7 @@ import com.airwallex.calculator.operation.IUserInput;
 
 /**  
  * ClassName:OperationRecord <br/>  
+ * Function: 操作部分. <br/>  
  * Date:     2018年10月24日 下午7:19:24 <br/>  
  * @author   snow.zhang  
  * @version    
@@ -23,7 +24,13 @@ import com.airwallex.calculator.operation.IUserInput;
  * @see        
  */
 public class OperationRecord {
+    /**
+     * 参数列表
+     */
     private List<BigDecimal> paramList;
+    /**
+     * 输入操作
+     */
     private IUserInput input;
     public List<BigDecimal> getParamList() {
         return paramList;
@@ -44,7 +51,5 @@ public class OperationRecord {
         this.paramList = paramList;
         this.input = input;
     }
-    
-    
 }
   

@@ -9,10 +9,10 @@
 
 package com.airwallex.calculator.operation;
 
-import com.airwallex.calculator.save.Save;
+import com.airwallex.calculator.save.ISave;
 
 /**
- * ClassName:UserInput <br/>
+ * ClassName:IUserInput <br/>
  * Date: 2018年10月24日 下午7:08:08 <br/>
  * 
  * @author snow.zhang
@@ -23,5 +23,5 @@ import com.airwallex.calculator.save.Save;
 public interface IUserInput {
     int DECIMAL_LENGTH = 15;
     
-    void execute(Save save);
+    void execute(ISave save);
 }

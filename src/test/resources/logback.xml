@@ -32,7 +32,7 @@
 	</appender>
 
 	 <!-- project default level -->
-    <logger name="com.airwallex" level="INFO"/>
+    <logger name="com.airwallex" level="DEBUG"/>
     
     <root level="${log.level}">
         <appender-ref ref="STDOUT"/>

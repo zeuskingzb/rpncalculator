@@ -3,12 +3,12 @@ package com.airwallex.calculator.operation.operator;
 import java.math.BigDecimal;
 
 import com.airwallex.calculator.OperationRecord;
-import com.airwallex.calculator.save.Save;
+import com.airwallex.calculator.save.ISave;
 
-public class Multiplication extends BiOperator {
+public class Multiplication extends IOperator {
 
 	@Override
-	protected void operate(Save save) {
+	protected void operate(ISave save) {
 		BigDecimal first = save.popDigit();
 		BigDecimal second = save.popDigit();
 		BigDecimal result = second.multiply(first);

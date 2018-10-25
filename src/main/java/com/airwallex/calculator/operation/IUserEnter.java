@@ -21,7 +21,7 @@ import java.util.List;
  */
 public interface IUserEnter {
     String SPACE = " ";
-
+    
     List<IUserInput> getUserInput();
 }
   

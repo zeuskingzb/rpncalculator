@@ -10,12 +10,22 @@ import org.apache.commons.collections4.CollectionUtils;
 
 import com.airwallex.calculator.OperationRecord;
 import com.airwallex.calculator.operation.IUserInput;
-import com.airwallex.calculator.save.Save;
+import com.airwallex.calculator.save.ISave;
 
+/**
+ * 
+ * ClassName: Clear <br/>  
+ * Function: 清除. <br/>  
+ * date: 2018年10月25日 上午9:12:53 <br/>  
+ *  
+ * @author snow.zhang  
+ * @version   
+ * @since JDK 1.7
+ */
 public class Clear implements IUserInput {
 
 	@Override
-	public void execute(Save save) {
+	public void execute(ISave save) {
 		List<BigDecimal> elements = new ArrayList<BigDecimal>();
 		BigDecimal digit;
 		try {

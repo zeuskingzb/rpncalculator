@@ -55,7 +55,7 @@ public class UserEnterFactory implements IUserEnter {
             String[] strings = userEntered.split(IUserEnter.SPACE);
             for (String string : strings) {
                 IUserInput userInput = this.buildIUserInput(string);
-                if(userInput!=null){
+                if (userInput != null) {
                     userInputs.add(userInput);
                 }
             }
@@ -85,9 +85,7 @@ public class UserEnterFactory implements IUserEnter {
      * @since JDK 1.7
      */
     private IUserInput getOperatorUserInput(String str) {
-
         IUserInput userInput = null;
-
         try {
             userInput = OperatorFactory.getOperator(str);
         } catch (Exception e) {

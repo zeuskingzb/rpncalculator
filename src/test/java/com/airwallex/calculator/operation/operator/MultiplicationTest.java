@@ -25,20 +25,20 @@ import com.airwallex.calculator.base.BaseCalculatorTest;
 import com.airwallex.calculator.save.ISave;
 
 /**
- * ClassName:AdditionTest <br/>
+ * ClassName:MultiplicationTest <br/>
  * Date: 2018年10月25日 上午12:13:55 <br/>
- * 
+ *
  * @author snow.zhang
  * @version
  * @since JDK 1.7
  * @see
  */
-public class AdditionTest {
-    private Addition instance;
+public class MultiplicationTest {
+    private Multiplication instance;
 
     @BeforeMethod
     public void newInstance() {
-        this.instance = new Addition();
+        this.instance = new Multiplication();
     }
 
     @AfterMethod
@@ -47,23 +47,12 @@ public class AdditionTest {
     }
 
     @Test
-    public void when2ElementsProvidedThenSaveUpdateWithOneResult() {
+    public void multiplicationTwoDigit() {
         ISave mockSave = BaseCalculatorTest.givenMockSave();
         instance.execute(mockSave);
-        //验证返回值
-        verify(mockSave).pushDigit(Matchers.eq(new BigDecimal(12)));
-        //验证调用过几次
+        verify(mockSave).pushDigit(Matchers.eq(new BigDecimal(27)));
         verify(mockSave, times(2)).popDigit();
         verify(mockSave).pushOperationRecord(Matchers.any(OperationRecord.class));
     }
-
-    @Test
-    public void when2ElementsProvidedThenAnOperationRecordShouldReturn() {
-        OperationRecord record = this.instance.getOperationRecord(new BigDecimal(1), new BigDecimal(5));
-        Assert.assertNotNull(record);
-        Assert.assertTrue(2 == record.getParamList().size());
-        Assert.assertEquals(this.instance, record.getInput());
-        Assert.assertEquals(new BigDecimal(5), record.getParamList().get(0));
-        Assert.assertEquals(new BigDecimal(1), record.getParamList().get(1));
-    }
+    
 }

@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.airwallex.calculator.OperationRecord;
-import com.airwallex.calculator.save.Save;
+import com.airwallex.calculator.save.ISave;
 
 /**
  * ClassName:DigitalUserInput <br/>
@@ -33,7 +33,7 @@ public class DigitalUserInput implements IUserInput {
     }
 
     @Override
-    public void execute(Save save) {
+    public void execute(ISave save) {
         save.pushDigit(data);
         OperationRecord record = toOperationRecord(data);
         save.pushOperationRecord(record);

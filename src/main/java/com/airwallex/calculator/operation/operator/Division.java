@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 import com.airwallex.calculator.OperationRecord;
 import com.airwallex.calculator.operation.IUserInput;
-import com.airwallex.calculator.save.Save;
+import com.airwallex.calculator.save.ISave;
 
 /**
  * 
@@ -16,15 +16,15 @@ import com.airwallex.calculator.save.Save;
  * @version   
  * @since JDK 1.7
  */
-public class Division extends BiOperator {
+public class Division extends IOperator {
 
 	@Override
-	protected void operate(Save save) {
+	protected void operate(ISave save) {
 		BigDecimal first = save.popDigit();
 		//0的时候特殊处理,除数不能为零
 		if (BigDecimal.ZERO.equals(first)) {
 			save.pushDigit(first);
-			System.err.println("Divisor cannot be ZERO!");
+			System.err.println("The denominator cannot be ZERO!");
 			return;
 		}
 		BigDecimal second = save.popDigit();

@@ -39,7 +39,7 @@ public enum OperatorType implements IEnum {
                 return operatorType;
             }
         }
-        throw new IllegalArgumentException("input cannot be " +input+" ,Available operators are +, -, *, /, sqrt, undo, clear.");
+        throw new IllegalArgumentException("input cannot be [" +input+" ] ,Available operators are +, -, *, /, sqrt, undo, clear.");
     }
 
 }

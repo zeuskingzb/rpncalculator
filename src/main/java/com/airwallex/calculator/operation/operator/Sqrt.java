@@ -8,12 +8,12 @@ import org.omg.PortableInterceptor.USER_EXCEPTION;
 
 import com.airwallex.calculator.OperationRecord;
 import com.airwallex.calculator.operation.IUserInput;
-import com.airwallex.calculator.save.Save;
+import com.airwallex.calculator.save.ISave;
 
 public class Sqrt implements IUserInput, USER_EXCEPTION {
 
 	@Override
-	public void execute(Save save) {
+	public void execute(ISave save) {
 		BigDecimal first = save.popDigit();
         if (first.equals(first.abs())) {
 			BigDecimal result = new BigDecimal(Math.sqrt(first.doubleValue())).setScale(IUserInput.DECIMAL_LENGTH, BigDecimal.ROUND_DOWN);

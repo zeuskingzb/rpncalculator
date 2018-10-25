@@ -22,7 +22,7 @@ import com.airwallex.calculator.OperationRecord;
  * @since JDK 1.7
  * @see
  */
-public interface Save {
+public interface ISave {
     void pushDigit(BigDecimal userInput);
 
     BigDecimal popDigit();
@@ -34,4 +34,5 @@ public interface Save {
     OperationRecord popOperationRecord();
 
     int getDigitStackSize();
+
 }

@@ -16,20 +16,21 @@ import java.util.List;
 
 import com.airwallex.calculator.OperationRecord;
 import com.airwallex.calculator.operation.IUserInput;
-import com.airwallex.calculator.save.Save;
+import com.airwallex.calculator.save.ISave;
 
 /**  
- * ClassName:BiOperator <br/>  
+ * ClassName:IOperator <br/>  
+ * Function: 操作抽象. <br/>  
  * Date:     2018年10月24日 下午8:28:25 <br/>  
  * @author   snow.zhang  
  * @version    
  * @since    JDK 1.7  
  * @see        
  */
-public abstract class BiOperator implements IUserInput {
+public abstract class IOperator implements IUserInput {
     private static final int TWO = 2;
     @Override
-    public void execute(Save save) {
+    public void execute(ISave save) {
 
         if (isValidOperation(save)) {
             operate(save);
@@ -41,13 +42,13 @@ public abstract class BiOperator implements IUserInput {
         return new OperationRecord(params, this);
     }
     
-    protected boolean isValidOperation(Save save) {
+    protected boolean isValidOperation(ISave save) {
         if (save.getDigitStackSize() < TWO) {
             throw new EmptyStackException();
         }
         return true;
     }
-    protected abstract void operate(Save save);
+    protected abstract void operate(ISave save);
 
 }
   

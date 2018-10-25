@@ -16,7 +16,7 @@ import java.util.Stack;
 
 import com.airwallex.calculator.OperationRecord;
 import com.airwallex.calculator.operation.IUserEnter;
-import com.airwallex.calculator.save.Save;
+import com.airwallex.calculator.save.ISave;
 
 /**
  * ClassName:SaveImpl <br/>
@@ -27,7 +27,7 @@ import com.airwallex.calculator.save.Save;
  * @since JDK 1.7
  * @see
  */
-public class SaveImpl implements Save {
+public class SaveImpl implements ISave {
     private static final int MAX_DISPLAYED_DECIMAL_PLACES = 10;
     private static final int ZERO = 0;
     private Stack<BigDecimal> digitStack = new Stack<BigDecimal>();
@@ -40,23 +40,24 @@ public class SaveImpl implements Save {
     public BigDecimal popDigit() {
         return this.digitStack.pop();
     }
+
     /**
      * 
-     * 打印stack信息  
-     * @see com.airwallex.calculator.save.Save#printStack()
+     * 打印stack信息
+     * 
+     * @see com.airwallex.calculator.save.ISave#printStack()
      */
     public void printStack() {
-        System.out.print("Stack: ");
+        StringBuilder buf = new StringBuilder("StackInfo: ");
         List<BigDecimal> elements = new ArrayList<BigDecimal>(this.digitStack);
         for (BigDecimal element : elements) {
-            System.out.print((ZERO == element.scale()) ? element : format10Digits(element.stripTrailingZeros()));
-            System.out.print(IUserEnter.SPACE);
+            buf.append((ZERO == element.scale()) ? element : formatDigits(element.stripTrailingZeros()));
+            buf.append(IUserEnter.SPACE);
         }
-
-        System.out.println();
+        System.out.println(buf.toString());
     }
 
-    protected String format10Digits(BigDecimal digit) {
+    protected String formatDigits(BigDecimal digit) {
         String result;
         if (MAX_DISPLAYED_DECIMAL_PLACES <= digit.scale()) {
             result = String.format("%.10f", digit.floatValue());
