@@ -48,12 +48,13 @@ public class SaveImpl implements ISave {
      * @see com.airwallex.calculator.save.ISave#printStack()
      */
     public void printStack() {
-        StringBuilder buf = new StringBuilder("StackInfo: ");
+        StringBuilder buf = new StringBuilder("StackInfo: [");
         List<BigDecimal> elements = new ArrayList<BigDecimal>(this.digitStack);
         for (BigDecimal element : elements) {
             buf.append((ZERO == element.scale()) ? element : formatDigits(element.stripTrailingZeros()));
             buf.append(IUserEnter.SPACE);
         }
+        buf.append(" ]");
         System.out.println(buf.toString());
     }
 

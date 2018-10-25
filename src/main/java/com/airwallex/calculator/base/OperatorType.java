@@ -9,7 +9,6 @@
 
 package com.airwallex.calculator.base;
 
-import com.airwallex.calculator.ienum.IEnum;
 
 /**
  * ClassName:OperatorType <br/>

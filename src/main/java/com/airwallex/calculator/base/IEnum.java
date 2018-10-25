@@ -7,7 +7,7 @@
  *  
 */  
   
-package com.airwallex.calculator.ienum;  
+package com.airwallex.calculator.base;  
 /**  
  * ClassName:IEnum <br/>  
  * Date:     2018年10月24日 下午6:43:39 <br/>  

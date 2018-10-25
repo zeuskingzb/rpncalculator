@@ -42,7 +42,7 @@ public class ClearTest {
     }
 
     @Test
-    public void when2ElementsProvidedThenAnOperationRecordShouldReturn() {
+    public void whenTwoElementsProvidedThenAnOperationRecordShouldReturn() {
         OperationRecord record = this.instance.getOperationRecord(BaseCalculatorTest.getTwoOperationList());
         Assert.assertNotNull(record);
         Assert.assertTrue(2 ==  record.getParamList().size());
